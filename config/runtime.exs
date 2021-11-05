@@ -45,6 +45,10 @@ config :appsignal, :config,
   revision: Application.spec(:glific, :vsn) |> to_string(),
   push_api_key: env!("APPSIGNAL_PUSH_API_KEY", :string!)
 
+# Swoosh config
+config :glific, Glific.Mailer,
+  api_key: env!("MAILER_API_KEY", :string)
+
 config :glific, Glific.Vault,
   ciphers: [
     default:
